@@ -1,5 +1,6 @@
+yarn init -y
 yarn
 yarn upgrade
-yarn init -y
 yarn run husky-postinstall
+npx lerna create basic -y
 npx sort-package-json

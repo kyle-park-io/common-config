@@ -1,7 +1,5 @@
 {
   "private": true,
-  "license": "MIT",
-  "author": "kyle-park-io <andy3638@naver.com>",
   "workspaces": [
     "packages/*"
   ],
@@ -14,8 +12,7 @@
     "husky-postpack": "pinst --enable",
     "husky-prepack": "pinst --disable",
     "prettier-format": "prettier --write .",
-    "prettier-lint": "prettier --check .",
-    "test": ""
+    "prettier-lint": "prettier --check ."
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.2",

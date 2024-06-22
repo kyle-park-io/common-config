@@ -1,7 +1,4 @@
 {
-  "license": "MIT",
-  "author": "kyle-park-io <andy3638@naver.com>",
-  "main": "index.js",
   "scripts": {
     "commit-last": "commitlint --from HEAD~1 --to HEAD",
     "commit-lint": "commitlint --from main --to HEAD",

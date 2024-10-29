@@ -1,6 +1,10 @@
 package pattern
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+	"time"
+)
 
 // Make sure close the channel because the sender(out channel) is located
 func fanIn(channels ...<-chan int) <-chan int {
@@ -30,4 +34,30 @@ func fanIn(channels ...<-chan int) <-chan int {
 	}()
 
 	return out
+}
+
+func worker(id int, ch chan<- int) {
+	for i := 0; i < 3; i++ {
+		ch <- id*10 + i
+		time.Sleep(500 * time.Millisecond)
+	}
+	// pattern
+	close(ch)
+}
+
+func B() {
+
+	ch1 := make(chan int)
+	ch2 := make(chan int)
+	ch3 := make(chan int)
+
+	go worker(1, ch1)
+	go worker(2, ch2)
+	go worker(3, ch3)
+
+	merged := fanIn(ch1, ch2, ch3)
+	for val := range merged {
+		fmt.Printf("Received on merged channel: %d\n", val)
+	}
+	time.Sleep(time.Duration(math.MaxInt64))
 }

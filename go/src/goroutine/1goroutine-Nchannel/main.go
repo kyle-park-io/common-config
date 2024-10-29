@@ -5,4 +5,5 @@ func main() {
 	// scopenlistener.A()
 	// nestedlisteners.A()
 	// pattern.A()
+	// pattern.B()
 }

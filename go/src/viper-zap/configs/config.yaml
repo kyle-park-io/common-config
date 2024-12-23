@@ -1,0 +1,13 @@
+app:
+  name: 'MyApp'
+  version: '1.0.0'
+
+server:
+  port: 8080
+  debug: true
+
+db:
+  DB_USER: hello
+  DB_PASS: world
+
+DB_NAME: kyle
